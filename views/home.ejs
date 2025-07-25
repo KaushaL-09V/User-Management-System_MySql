@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        #bgVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bgVideo">
+        <source src="../BackGround_Vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <% layout('partials/layout') -%>
+        <% title='Home' %>
+
+            <div class="text-center">
+                <h2 class="mb-4">Total Users: <span class="text-primary">
+                        <%= count %>
+                    </span></h2>
+                <a href="/user" class="btn btn-success">View All Users</a>
+            </div>
+
+</body>
+
+</html>

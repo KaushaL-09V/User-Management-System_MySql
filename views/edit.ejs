@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Username</title>
+    <style>
+        #bgVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <% layout('partials/layout') -%>
+        <% title='Edit User' %>
+
+            <h3>Edit User - <%= user.email %>
+            </h3>
+            <form method="post" action="/user/<%= user.id %>?_method=patch" class="mt-3">
+                <div class="mb-3">
+                    <input type="text" name="newName" class="form-control" value="<%= user.username %>"
+                        placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="formPass" class="form-control" placeholder="Confirm Password">
+                </div>
+                <button class="btn btn-success">Update</button>
+                <a href="/user" class="btn btn-secondary">Cancel</a>
+            </form>
+
+</body>
+
+</html>

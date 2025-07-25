@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account</title>
+    <style>
+        #bgVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bgVideo">
+        <source src="../BackGround_Vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <% layout('partials/layout') -%>
+        <% title='Delete User' %>
+
+            <h3 class="text-danger">Are you sure you want to delete <%= user.username %>?</h3>
+
+            <form method="post" action="/user/<%= user.id %>?_method=DELETE" class="mt-4">
+                <div class="mb-3">
+                    <input type="email" name="FormEmail" class="form-control" placeholder="Enter Email">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="FormPass" class="form-control" placeholder="Enter Password">
+                </div>
+                <button class="btn btn-danger">Delete</button>
+                <a href="/user" class="btn btn-secondary">Cancel</a>
+            </form>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+
+
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+            align-content: center;
+        }
+
+        #newuser {
+            border: 2px solid black;
+        }
+
+        #bgVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bgVideo">
+        <source src="../BackGround_Vid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <% layout('partials/layout') -%>
+        <% title='All Users' %>
+
+            <h2 class="mb-4">DashBoard</h2>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>User Management</h2>
+                <a href="/" class="btn btn-secondary">← Back to Home</a>
+            </div>
+
+            <form class="mb-5" method="post" action="/user">
+                <div class="row g-2">
+                    <div class="col-md-3"><input class="form-control" name="username" placeholder="Username"></div>
+                    <div class="col-md-4"><input class="form-control" name="email" placeholder="Email"></div>
+                    <div class="col-md-3"><input class="form-control" name="password" placeholder="Password"
+                            type="password"></div>
+                    <div class="col-md-2"><button class="btn btn-primary w-100">Add User</button></div>
+                </div>
+            </form>
+
+            <table class="table table-bordered table-hover table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let user of users) { %>
+                        <tr>
+                            <td>
+                                <%= user.id %>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                            <td>
+                                <%= user.username %>
+                            </td>
+                            <td>
+                                <a href="/user/<%= user.id %>/edit" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="/user/<%= user.id %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+
+</body>
+
+</html>
