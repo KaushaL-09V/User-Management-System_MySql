@@ -7,6 +7,7 @@ const port = 3000
 
 const engine = require('ejs-mate');
 app.engine('ejs', engine);
+app.use(express.static('public'));
 
 
 const methodOverride = require('method-override')

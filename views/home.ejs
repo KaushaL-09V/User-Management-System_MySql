@@ -6,33 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <style>
-        #bgVideo {
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background video styling */
+        .bg-video {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Makes sure video fills screen */
             z-index: -1;
-            object-fit: cover;
+            /* Puts video behind everything */
         }
     </style>
 </head>
 
 <body>
 
-    <video autoplay muted loop id="bgVideo">
-        <source src="../BackGround_Vid.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
     <% layout('partials/layout') -%>
         <% title='Home' %>
 
-            <div class="text-center">
+            <!-- Background Video -->
+            <video class="bg-video" autoplay muted loop playsinline>
+                <source src="../public/BackGround_Vid.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+
+            <!-- Foreground Content -->
+            <div class="content">
                 <h2 class="mb-4">Total Users: <span class="text-primary">
                         <%= count %>
                     </span></h2>
                 <a href="/user" class="btn btn-success">View All Users</a>
             </div>
+
 
 </body>
 
