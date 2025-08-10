@@ -48,6 +48,6 @@ CREATE TABLE user (
 [User Management Dashboard Preview](images/Video.gif)
 
 <p align="center">
-  <img src="images/Video.mp4" alt="User Management Dashboard Preview" width="800">
+  <img src="images/Video.gif" alt="User Management Dashboard Preview" width="800">
 </p>
 
