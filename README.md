@@ -43,3 +43,7 @@ CREATE TABLE user (
     password VARCHAR(50) NOT NULL
 );
 ```
+
+## 📸 Preview
+
+![User Management Dashboard Preview](images/video.mp4)
