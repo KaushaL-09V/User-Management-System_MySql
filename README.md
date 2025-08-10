@@ -46,4 +46,4 @@ CREATE TABLE user (
 
 ## 📸 Preview
 
-![User Management Dashboard Preview](images/Video.mp4)
+![User Management Dashboard Preview](images/Video.gif)
