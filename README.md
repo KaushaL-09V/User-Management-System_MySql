@@ -46,3 +46,8 @@ CREATE TABLE user (
 
 ## 📸 Preview
 [User Management Dashboard Preview](images/Video.gif)
+
+<p align="center">
+  <img src="images/Video.gif" alt="User Management Dashboard Preview" width="800">
+</p>
+
